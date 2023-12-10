@@ -38,8 +38,8 @@ artifacts = ["jupytercad_salome/labextension"]
 exclude = [".github", "binder"]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"jupytercad_salome/labextension" = "share/jupyter/labextensions/jupytercad-salome"
-"install.json" = "share/jupyter/labextensions/jupytercad-salome/install.json"
+"install.json" = "share/jupyter/labextensions/@jupytercad/jupytercad-salome/install.json"
+"jupytercad_salome/labextension" = "share/jupyter/labextensions/@jupytercad/jupytercad-salome"
 "jupyter-config/server-config" = "etc/jupyter/jupyter_server_config.d"
 
 [tool.hatch.build.hooks.version]

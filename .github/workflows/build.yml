@@ -35,7 +35,7 @@ jobs:
         jupyter server extension list 2>&1 | grep -ie "jupytercad_salome.*OK"
 
         jupyter labextension list
-        jupyter labextension list 2>&1 | grep -ie "jupytercad-salome.*OK"
+        jupyter labextension list 2>&1 | grep -ie "@jupytercad/jupytercad-salome.*OK"
         python -m jupyterlab.browser_check
 
     - name: Package the extension
