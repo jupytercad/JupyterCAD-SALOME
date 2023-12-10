@@ -5,22 +5,18 @@ except ImportError:
     # in editable mode with pip. It is highly recommended to install
     # the package from a stable release or in editable mode: https://pip.pypa.io/en/stable/topics/local-project-installs/#editable-installs
     import warnings
+
     warnings.warn("Importing 'jupytercad_salome' outside a proper installation.")
     __version__ = "dev"
 from .handlers import setup_handlers
 
 
 def _jupyter_labextension_paths():
-    return [{
-        "src": "labextension",
-        "dest": "@jupytercad/jupytercad-salome"
-    }]
+    return [{"src": "labextension", "dest": "@jupytercad/jupytercad-salome"}]
 
 
 def _jupyter_server_extension_points():
-    return [{
-        "module": "jupytercad_salome"
-    }]
+    return [{"module": "jupytercad_salome"}]
 
 
 def _load_jupyter_server_extension(server_app):
