@@ -2,6 +2,8 @@ import { URLExt } from '@jupyterlab/coreutils';
 
 import { ServerConnection } from '@jupyterlab/services';
 
+export const API_NAMESPACE = 'jupytercad-salome';
+
 /**
  * Call the API extension
  *
@@ -15,11 +17,7 @@ export async function requestAPI<T>(
 ): Promise<T> {
   // Make request to Jupyter API
   const settings = ServerConnection.makeSettings();
-  const requestUrl = URLExt.join(
-    settings.baseUrl,
-    'jupytercad-salome', // API Namespace
-    endPoint
-  );
+  const requestUrl = URLExt.join(settings.baseUrl, endPoint);
 
   let response: Response;
   try {

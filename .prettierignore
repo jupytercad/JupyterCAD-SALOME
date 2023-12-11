@@ -3,4 +3,6 @@ node_modules
 **/lib
 **/package.json
 !/package.json
-jupytercad_salome
+jupytercad_salome/**/*.js
+yarn.lock
+*.jcad

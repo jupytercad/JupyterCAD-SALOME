@@ -8,7 +8,7 @@ except ImportError:
 
     warnings.warn("Importing 'jupytercad_salome' outside a proper installation.")
     __version__ = "dev"
-from .handlers import setup_handlers
+from .main import setup_handlers
 
 
 def _jupyter_labextension_paths():

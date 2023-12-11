@@ -2,8 +2,15 @@ import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
-
-import { requestAPI } from './handler';
+import { URLExt } from '@jupyterlab/coreutils';
+import { requestAPI, API_NAMESPACE } from './handler';
+import { SalomeWorker } from './worker';
+import { AppClient } from './_client/AppClient';
+import {
+  IJCadWorkerRegistry,
+  IJCadWorkerRegistryToken
+} from '@jupytercad/schema';
+import { ServerConnection } from '@jupyterlab/services';
 
 /**
  * Initialization data for the jupytercad-salome extension.
@@ -12,18 +19,32 @@ const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupytercad-salome:plugin',
   description: 'A JupyterLab extension.',
   autoStart: true,
-  activate: (app: JupyterFrontEnd) => {
-    console.log('JupyterLab extension jupytercad-salome is activated!');
+  requires: [IJCadWorkerRegistryToken],
+  activate: async (
+    app: JupyterFrontEnd,
+    workerRegistry: IJCadWorkerRegistry
+  ) => {
+    console.log('jupytercad:salome is activated!');
 
-    requestAPI<any>('get-example')
-      .then(data => {
-        console.log(data);
-      })
-      .catch(reason => {
-        console.error(
-          `The jupytercad_salome server extension appears to be missing.\n${reason}`
-        );
-      });
+    const settings = ServerConnection.makeSettings();
+    const getBackendUrl = URLExt.join(API_NAMESPACE, 'get-backend');
+    const data = await requestAPI<{
+      backend_url?: string;
+    }>(getBackendUrl);
+    let serverURL = '';
+    if (data.backend_url) {
+      serverURL = data.backend_url;
+    } else {
+      serverURL = settings.baseUrl.replace(/\/$/, '');
+    }
+
+    const appClient = new AppClient({
+      BASE: serverURL,
+      TOKEN: settings.token
+    });
+    const worker = new SalomeWorker({ appClient });
+
+    workerRegistry.registerWorker('jupytercad-salome:worker', worker);
   }
 };
 

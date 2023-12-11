@@ -1,0 +1,65 @@
+openapi: 3.0.3
+info:
+  title: Jupytercad_salome OpenAPI
+  description: |-
+    Jupytercad_salome OpenAPI
+  version: 1.0.0
+paths:
+  /jupytercad-salome/execute:
+    post:
+      tags:
+        - execute
+      summary: Generate a mesh from geomerty
+      operationId: generateMesh
+      requestBody:
+        description: Input and parameters to generate mesh
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ExecutionRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExecutionResponse'
+        '405':
+          description: Invalid input
+
+components:
+  schemas:
+    ExecutionRequest:
+      type: object
+      properties:
+        geometry:
+          type: string
+          description: The string representation of geometry
+        format:
+          type: string
+          example: brep
+          enum:
+            - brep
+            - step
+          description: Geometry format
+        numberOfSegments:
+          type: number
+          example: 10
+          description: The number of segments
+      required: ['geometry', 'format', 'numberOfSegments']
+      additionalProperties: false
+    ExecutionResponse:
+      type: object
+      properties:
+        mesh:
+          type: string
+          description: The string representation of the generated mesh geometry
+        format:
+          type: string
+          example: obj
+          enum:
+            - obj
+          description: Mesh geometry format
+      required: ['mesh', 'format']
+      additionalProperties: false

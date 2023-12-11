@@ -119,3 +119,7 @@ dmypy.json
 
 # Yarn cache
 .yarn/
+
+.ruff_cache
+.jupyter_ystore.db
+_client/

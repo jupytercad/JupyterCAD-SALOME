@@ -26,6 +26,7 @@
     },
     "scripts": {
         "build": "jlpm build:lib && jlpm build:labextension:dev",
+        "build:client": "openapi --input ./jupytercad_salome/schema/openapi.yaml --output ./src/_client --client axios --name AppClient --useOptions",
         "build:prod": "jlpm clean && jlpm build:lib:prod && jlpm build:labextension",
         "build:labextension": "jupyter labextension build .",
         "build:labextension:dev": "jupyter labextension build --development True .",
@@ -52,17 +53,23 @@
     },
     "dependencies": {
         "@jupytercad/base": "^1.0.0-alpha.1",
-        "@jupytercad/jupytercad-core": "^1.0.0-alpha.1",
         "@jupytercad/schema": "^1.0.0-alpha.1",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
-        "@jupyterlab/services": "^7.0.0"
+        "@jupyterlab/services": "^7.0.0",
+        "axios": "^1.3.5",
+        "uuid": "^8.3.2"
+    },
+    "resolutions": {
+        "@jupytercad/base": "file:../jupytercad/packages/base",
+        "@jupytercad/schema": "file:../jupytercad/packages/schema"
     },
     "devDependencies": {
         "@jupyterlab/builder": "^4.0.0",
         "@types/json-schema": "^7.0.11",
         "@types/react": "^18.0.26",
         "@types/react-addons-linked-state-mixin": "^0.14.22",
+        "@types/uuid": "^8.3.2",
         "@typescript-eslint/eslint-plugin": "^6.1.0",
         "@typescript-eslint/parser": "^6.1.0",
         "css-loader": "^6.7.1",
@@ -71,6 +78,7 @@
         "eslint-plugin-prettier": "^5.0.0",
         "mkdirp": "^1.0.3",
         "npm-run-all": "^4.1.5",
+        "openapi-typescript-codegen": "^0.23.0",
         "prettier": "^3.0.0",
         "rimraf": "^5.0.1",
         "source-map-loader": "^1.0.2",
