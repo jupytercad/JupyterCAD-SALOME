@@ -1,0 +1,15 @@
+{
+  "type": "object",
+  "required": ["Object"],
+  "additionalProperties": false,
+  "properties": {
+    "Object": {
+      "type": "string",
+      "description": "The name of input object"
+    },
+    "NumberOfSegments": {
+      "type": "number",
+      "description": "The number of segments"
+    }
+  }
+}

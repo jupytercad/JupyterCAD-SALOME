@@ -25,7 +25,7 @@
         "url": "https://github.com/jupytercad/jupytercad-salome.git"
     },
     "scripts": {
-        "build": "jlpm build:lib && jlpm build:labextension:dev",
+        "build": "jlpm build:client && jlpm build:lib && jlpm build:labextension:dev",
         "build:client": "openapi --input ./jupytercad_salome/schema/openapi.yaml --output ./src/_client --client axios --name AppClient --useOptions",
         "build:prod": "jlpm clean && jlpm build:lib:prod && jlpm build:labextension",
         "build:labextension": "jupyter labextension build .",
@@ -151,7 +151,10 @@
             "@typescript-eslint/no-unused-vars": [
                 "warn",
                 {
-                    "args": "none"
+                    "args": "none",
+                    "argsIgnorePattern": "^_",
+                    "varsIgnorePattern": "^_",
+                    "caughtErrorsIgnorePattern": "^_"
                 }
             ],
             "@typescript-eslint/no-explicit-any": "off",

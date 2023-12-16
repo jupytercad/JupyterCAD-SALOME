@@ -46,7 +46,7 @@ export class SalomeWorker implements IJCadWorker {
       for (const key in msg.payload) {
         const item = msg.payload[key] as { occBrep: string; jcObject: IDict };
         const numberOfSegments =
-          item.jcObject?.parameters?.NumberOfSegment ?? 15;
+          item.jcObject?.parameters?.NumberOfSegments ?? 15;
         const res = this._appClient.execute.generateMesh({
           requestBody: {
             geometry: item.occBrep,

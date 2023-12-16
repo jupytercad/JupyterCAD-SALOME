@@ -838,14 +838,14 @@ __metadata:
   linkType: hard
 
 "@jupytercad/base@file:../jupytercad/packages/base::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
-  version: 1.0.0-alpha.1
-  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=600fbe&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  version: 1.0.0-alpha.2
+  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=ed7aec&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@deathbeds/jupyterlab-rjsf": ^1.1.0
     "@jupyter/docprovider": ^1.0.0
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
-    "@jupytercad/occ-worker": ^1.0.0-alpha.1
-    "@jupytercad/schema": ^1.0.0-alpha.1
+    "@jupytercad/occ-worker": ^1.0.0-alpha.2
+    "@jupytercad/schema": ^1.0.0-alpha.2
     "@jupyterlab/application": ^4.0.0
     "@jupyterlab/apputils": ^4.0.0
     "@jupyterlab/coreutils": ^6.0.0
@@ -872,7 +872,7 @@ __metadata:
     three-mesh-bvh: ^0.5.17
     uuid: ^8.3.2
     yjs-widgets: ^0.3.3
-  checksum: 7845b2589cb87f246a04d948f0c243b3491a93c3ee1f0091d4cae4f34b39c0d0dcb28fbddb38a948a1d44bd98b7400e89fd6241e4507de112223b76ab5268588
+  checksum: 7e131a634bade1aaa24060d78c665970e4a2ae535ed80f75faa8bb6cb7a2745d6939ea4f3c755ff8c43036a3c419f3a6e6eb9e5c71d9556c761e121ca8f5e56d
   languageName: node
   linkType: hard
 
@@ -915,30 +915,30 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jupytercad/occ-worker@npm:^1.0.0-alpha.1":
-  version: 1.0.0-alpha.1
-  resolution: "@jupytercad/occ-worker@npm:1.0.0-alpha.1"
+"@jupytercad/occ-worker@npm:^1.0.0-alpha.2":
+  version: 1.0.0-alpha.2
+  resolution: "@jupytercad/occ-worker@npm:1.0.0-alpha.2"
   dependencies:
-    "@jupytercad/opencascade": ^1.0.0-alpha.1
-    "@jupytercad/schema": ^1.0.0-alpha.1
+    "@jupytercad/opencascade": ^1.0.0-alpha.2
+    "@jupytercad/schema": ^1.0.0-alpha.2
     "@lumino/coreutils": ^2.0.0
     uuid: ^8.3.2
-  checksum: 83006fbc8575a608dead219c2e493e703da63062ac19586a9c91a1a6e90cbd44f90d64f74980018a1fd0411f4153d52c508ddeda2f74e9ca17b642d835b3669d
+  checksum: cff8a6ddba2f8188618012d8a85ac39598483ac7182845beff7c8c23ab5d65c6918a307a0483f7f4f5101cdada2c57c79798f4dffc33f929f6285c7369666f8f
   languageName: node
   linkType: hard
 
-"@jupytercad/opencascade@npm:^1.0.0-alpha.1":
-  version: 1.0.0-alpha.1
-  resolution: "@jupytercad/opencascade@npm:1.0.0-alpha.1"
+"@jupytercad/opencascade@npm:^1.0.0-alpha.2":
+  version: 1.0.0-alpha.2
+  resolution: "@jupytercad/opencascade@npm:1.0.0-alpha.2"
   dependencies:
     opencascade.js: beta
-  checksum: 1a93f94dd6a5a4736a470e3dbaaab5be678b58b995d4f90f67337d27bf8d76ccf62addc8a5a5caa5fce24ba0da112b1e93ce2d8ff5565be52841cc6721334e66
+  checksum: aab22899c3a62fe09eefcc7410610a8d7e987c203e4aea707db428c2664c25295c51777a01b8a80cd34aab9e88be1261ddad37543dfabfe56ef08ce32e17657c
   languageName: node
   linkType: hard
 
 "@jupytercad/schema@file:../jupytercad/packages/schema::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
-  version: 1.0.0-alpha.1
-  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=a50a89&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  version: 1.0.0-alpha.2
+  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=3d9320&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^9.0.9
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
@@ -952,7 +952,7 @@ __metadata:
     ajv: ^8.12.0
     json-schema-to-typescript: ^10.1.5
     yjs: ^13.5.40
-  checksum: 0ade9a834b668280ef532a5390ce71b0f089ed43832bb45d87552a3978ff36fc505ed6fa6b9c5dfe5f381135d3432442e8c956dcd82f8f00f539d357ba5b9961
+  checksum: c22ca871725fb3a0b0a11c63307db8a8feede6d830cbbcc424a20fae01fa03bac627d54ba8a4b474081345682773631b38aa8b505087a721aed4184addf8b53f
   languageName: node
   linkType: hard
 
