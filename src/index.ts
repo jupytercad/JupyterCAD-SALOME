@@ -65,7 +65,6 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
     const worker = new SalomeWorker({ appClient });
     workerRegistry.registerWorker('jupytercad-salome:worker', worker);
-
     schemaRegistry.registerSchema('Post::SalomeMesh', formSchema);
 
     addCommands(app, tracker, translator);

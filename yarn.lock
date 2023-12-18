@@ -839,7 +839,7 @@ __metadata:
 
 "@jupytercad/base@file:../jupytercad/packages/base::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=ed7aec&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=be31dd&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@deathbeds/jupyterlab-rjsf": ^1.1.0
     "@jupyter/docprovider": ^1.0.0
@@ -872,7 +872,7 @@ __metadata:
     three-mesh-bvh: ^0.5.17
     uuid: ^8.3.2
     yjs-widgets: ^0.3.3
-  checksum: 7e131a634bade1aaa24060d78c665970e4a2ae535ed80f75faa8bb6cb7a2745d6939ea4f3c755ff8c43036a3c419f3a6e6eb9e5c71d9556c761e121ca8f5e56d
+  checksum: 6de6e825750fae5eeec35a0efd4285d3a0ed3517f2eddccda855adbc2078629b4ab72d2a67b9687b2339bd99c872087ec57478b01af280985d36c86f4e876475
   languageName: node
   linkType: hard
 
@@ -938,7 +938,7 @@ __metadata:
 
 "@jupytercad/schema@file:../jupytercad/packages/schema::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=3d9320&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=ada77f&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^9.0.9
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
@@ -952,7 +952,7 @@ __metadata:
     ajv: ^8.12.0
     json-schema-to-typescript: ^10.1.5
     yjs: ^13.5.40
-  checksum: c22ca871725fb3a0b0a11c63307db8a8feede6d830cbbcc424a20fae01fa03bac627d54ba8a4b474081345682773631b38aa8b505087a721aed4184addf8b53f
+  checksum: 639b5c1ccf1f82fe3c116dc0e179f6d07e1b44ce72d71cbfb42ed845e6d7bbed4085445279feac64ea086aee1346af8922b2fe99508ed9a370babc19bd9cc463
   languageName: node
   linkType: hard
 

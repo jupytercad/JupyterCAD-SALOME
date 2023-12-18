@@ -60,10 +60,6 @@
         "axios": "^1.3.5",
         "uuid": "^8.3.2"
     },
-    "resolutions": {
-        "@jupytercad/base": "file:../jupytercad/packages/base",
-        "@jupytercad/schema": "file:../jupytercad/packages/schema"
-    },
     "devDependencies": {
         "@jupyterlab/builder": "^4.0.0",
         "@types/json-schema": "^7.0.11",
@@ -111,7 +107,17 @@
             }
         },
         "extension": true,
-        "outputDir": "jupytercad_salome/labextension"
+        "outputDir": "jupytercad_salome/labextension",
+        "sharedPackages": {
+            "@jupytercad/base": {
+                "singleton": true,
+                "bundled": false
+            },
+            "@jupytercad/schema": {
+                "singleton": true,
+                "bundled": false
+            }
+        }
     },
     "eslintIgnore": [
         "node_modules",
