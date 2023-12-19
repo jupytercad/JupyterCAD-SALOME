@@ -839,7 +839,7 @@ __metadata:
 
 "@jupytercad/base@file:../jupytercad/packages/base::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=be31dd&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=35fdcd&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@deathbeds/jupyterlab-rjsf": ^1.1.0
     "@jupyter/docprovider": ^1.0.0
@@ -872,7 +872,7 @@ __metadata:
     three-mesh-bvh: ^0.5.17
     uuid: ^8.3.2
     yjs-widgets: ^0.3.3
-  checksum: 6de6e825750fae5eeec35a0efd4285d3a0ed3517f2eddccda855adbc2078629b4ab72d2a67b9687b2339bd99c872087ec57478b01af280985d36c86f4e876475
+  checksum: 6b4fbebb26886374065b8ffc0fb1cd2eb6fe12062486a044ac61f7f9320b770532a29871c63f12d6596eaa99a5b476f5b932731d449d98ab6a243f1dac449907
   languageName: node
   linkType: hard
 
@@ -938,7 +938,7 @@ __metadata:
 
 "@jupytercad/schema@file:../jupytercad/packages/schema::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=ada77f&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=7995db&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^9.0.9
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
@@ -952,7 +952,7 @@ __metadata:
     ajv: ^8.12.0
     json-schema-to-typescript: ^10.1.5
     yjs: ^13.5.40
-  checksum: 639b5c1ccf1f82fe3c116dc0e179f6d07e1b44ce72d71cbfb42ed845e6d7bbed4085445279feac64ea086aee1346af8922b2fe99508ed9a370babc19bd9cc463
+  checksum: d798d79098e4bee83054934657ff7b0f2f3c8147269aa575165b7bb470088063e825618d74537b2613ed58549f01726945c7d1b0d2da6b98513a8a3a2e759da7
   languageName: node
   linkType: hard
 

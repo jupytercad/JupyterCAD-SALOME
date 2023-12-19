@@ -1,6 +1,7 @@
 import {
   IDict,
   IJCadWorker,
+  IJupyterCadTracker,
   IWorkerMessageBase,
   MainAction,
   WorkerAction
@@ -13,6 +14,7 @@ import { AppClient, ExecutionRequest, ExecutionResponse } from './_client';
 export class SalomeWorker implements IJCadWorker {
   constructor(options: SalomeWorker.IOptions) {
     this._appClient = options.appClient;
+    this._tracker = options.tracker;
   }
 
   get ready(): Promise<void> {
@@ -49,6 +51,7 @@ export class SalomeWorker implements IJCadWorker {
           item.jcObject?.parameters?.NumberOfSegments ?? 15;
         const res = this._appClient.execute.generateMesh({
           requestBody: {
+            sourcePath: this._tracker.currentWidget?.context.path,
             geometry: item.occBrep,
             format: ExecutionRequest.format.BREP,
             numberOfSegments
@@ -74,10 +77,12 @@ export class SalomeWorker implements IJCadWorker {
   private _ready = new PromiseDelegate<void>();
   private _messageHandlers = new Map();
   private _appClient: AppClient;
+  private _tracker: IJupyterCadTracker;
 }
 
 export namespace SalomeWorker {
   export interface IOptions {
     appClient: AppClient;
+    tracker: IJupyterCadTracker;
   }
 }

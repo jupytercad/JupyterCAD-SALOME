@@ -33,6 +33,9 @@ components:
     ExecutionRequest:
       type: object
       properties:
+        sourcePath:
+          type: string
+          description: Path to the JCAD file
         geometry:
           type: string
           description: The string representation of geometry

@@ -17,8 +17,12 @@ class SalomeHandler(APIHandler):
             data = self.get_json_body()
             geometry = data.get("geometry", None)
             n_segmen = data.get("numberOfSegments", 12)
+            jcad_path: str = data.get("sourcePath", None)
+            if jcad_path:
+                jcad_path = jcad_path.replace("RTC:", "")
+
             mesh_content = ""
             if geometry:
-                mesh_content = build_mesh(geometry, n_segmen)
+                mesh_content = build_mesh(geometry, n_segmen, jcad_path)
 
             self.finish(json.dumps({"mesh": mesh_content, "format": "obj"}))

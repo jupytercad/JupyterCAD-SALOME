@@ -1,3 +1,4 @@
+from pathlib import Path
 import salome
 import os
 from tempfile import NamedTemporaryFile
@@ -9,7 +10,7 @@ geompy = geomBuilder.New()
 smesh = smeshBuilder.New()
 
 
-def build_mesh(brep_string: str, number_of_segment: int) -> str:
+def build_mesh(brep_string: str, number_of_segment: int, jcad_path: str) -> str:
     if number_of_segment < 0:
         raise ValueError("Number of segment negative")
 
@@ -31,6 +32,9 @@ def build_mesh(brep_string: str, number_of_segment: int) -> str:
     is_done = mesh.Compute()
     if not is_done:
         raise RuntimeError("Problem during mesh computation")
+    if jcad_path:
+        med_path = Path.cwd() / Path(jcad_path.replace(".jcad", ".med"))
+        mesh.ExportMED(str(med_path), 0)
     med_tmp = NamedTemporaryFile(suffix=".stl", delete=False)
 
     mesh.ExportSTL(med_tmp.name, 1)
