@@ -839,7 +839,7 @@ __metadata:
 
 "@jupytercad/base@file:../jupytercad/packages/base::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=35fdcd&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=c9c081&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@deathbeds/jupyterlab-rjsf": ^1.1.0
     "@jupyter/docprovider": ^1.0.0
@@ -872,7 +872,7 @@ __metadata:
     three-mesh-bvh: ^0.5.17
     uuid: ^8.3.2
     yjs-widgets: ^0.3.3
-  checksum: 6b4fbebb26886374065b8ffc0fb1cd2eb6fe12062486a044ac61f7f9320b770532a29871c63f12d6596eaa99a5b476f5b932731d449d98ab6a243f1dac449907
+  checksum: 108ab9eca4cba0d3d0a4e07f5f22e862490bbdadef89222374eb8b33f30322583622690ea865f840014d705e372122df377a095c7c038467c570396939af28ad
   languageName: node
   linkType: hard
 
@@ -938,7 +938,7 @@ __metadata:
 
 "@jupytercad/schema@file:../jupytercad/packages/schema::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
   version: 1.0.0-alpha.2
-  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=7995db&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=ee6690&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^9.0.9
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
@@ -952,7 +952,7 @@ __metadata:
     ajv: ^8.12.0
     json-schema-to-typescript: ^10.1.5
     yjs: ^13.5.40
-  checksum: d798d79098e4bee83054934657ff7b0f2f3c8147269aa575165b7bb470088063e825618d74537b2613ed58549f01726945c7d1b0d2da6b98513a8a3a2e759da7
+  checksum: b41ea010f55abc26c7ddc9df699336e02d4adae8c7eacbab5318dadafa174e18fd1d8908bdd2ba9b658cc42585885fc77a16e7068c26aed064edd51b6afbe3fb
   languageName: node
   linkType: hard
 

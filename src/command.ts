@@ -40,7 +40,7 @@ namespace Private {
       return {
         Name: newName('Mesh', model),
         Object: selected.length > 0 ? selected[0] : objects[0].name ?? '',
-        NumberOfSegments: 15
+        NumberOfSegments: 10
       };
     },
     syncData: (model: IJupyterCadModel) => {

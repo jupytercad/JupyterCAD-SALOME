@@ -1,6 +1,6 @@
 {
     "name": "@jupytercad/jupytercad-salome",
-    "version": "1.0.0-alpha.1",
+    "version": "1.0.0-alpha.3",
     "description": "A JupyterLab extension.",
     "keywords": [
         "jupyter",
@@ -27,7 +27,7 @@
     "scripts": {
         "build": "jlpm build:client && jlpm build:lib && jlpm build:labextension:dev",
         "build:client": "openapi --input ./jupytercad_salome/schema/openapi.yaml --output ./src/_client --client axios --name AppClient --useOptions",
-        "build:prod": "jlpm clean && jlpm build:lib:prod && jlpm build:labextension",
+        "build:prod": "jlpm clean && jlpm build:client && jlpm build:lib:prod && jlpm build:labextension",
         "build:labextension": "jupyter labextension build .",
         "build:labextension:dev": "jupyter labextension build --development True .",
         "build:lib": "tsc --sourceMap",
@@ -52,17 +52,13 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupytercad/base": "^1.0.0-alpha.1",
-        "@jupytercad/schema": "^1.0.0-alpha.1",
+        "@jupytercad/base": "^1.0.0-alpha.3",
+        "@jupytercad/schema": "^1.0.0-alpha.3",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
         "@jupyterlab/services": "^7.0.0",
         "axios": "^1.3.5",
         "uuid": "^8.3.2"
-    },
-    "resolutions": {
-        "@jupytercad/base": "file:../jupytercad/packages/base",
-        "@jupytercad/schema": "file:../jupytercad/packages/schema"
     },
     "devDependencies": {
         "@jupyterlab/builder": "^4.0.0",
