@@ -35,7 +35,7 @@ jobs:
         id: finalize-release
         env:
           # The following are needed if you use legacy PyPI set up
-          # PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
           # PYPI_TOKEN_MAP: ${{ secrets.PYPI_TOKEN_MAP }}
           # TWINE_USERNAME: __token__
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

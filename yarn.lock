@@ -837,15 +837,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jupytercad/base@file:../jupytercad/packages/base::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
-  version: 1.0.0-alpha.2
-  resolution: "@jupytercad/base@file:../jupytercad/packages/base#../jupytercad/packages/base::hash=c9c081&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+"@jupytercad/base@npm:^1.0.0-alpha.3":
+  version: 1.0.0-alpha.3
+  resolution: "@jupytercad/base@npm:1.0.0-alpha.3"
   dependencies:
     "@deathbeds/jupyterlab-rjsf": ^1.1.0
     "@jupyter/docprovider": ^1.0.0
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
-    "@jupytercad/occ-worker": ^1.0.0-alpha.2
-    "@jupytercad/schema": ^1.0.0-alpha.2
+    "@jupytercad/occ-worker": ^1.0.0-alpha.3
+    "@jupytercad/schema": ^1.0.0-alpha.3
     "@jupyterlab/application": ^4.0.0
     "@jupyterlab/apputils": ^4.0.0
     "@jupyterlab/coreutils": ^6.0.0
@@ -872,7 +872,7 @@ __metadata:
     three-mesh-bvh: ^0.5.17
     uuid: ^8.3.2
     yjs-widgets: ^0.3.3
-  checksum: 108ab9eca4cba0d3d0a4e07f5f22e862490bbdadef89222374eb8b33f30322583622690ea865f840014d705e372122df377a095c7c038467c570396939af28ad
+  checksum: 88671c8d4c0c0cb790345a3b4a6c2fcd53a5cf9e2055eae2939f3d290fe098e0c5dd26b6e82cd23d2262287048887ff9e2b3641f18bd63c5b5687342b941c5eb
   languageName: node
   linkType: hard
 
@@ -880,8 +880,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jupytercad/jupytercad-salome@workspace:."
   dependencies:
-    "@jupytercad/base": ^1.0.0-alpha.1
-    "@jupytercad/schema": ^1.0.0-alpha.1
+    "@jupytercad/base": ^1.0.0-alpha.3
+    "@jupytercad/schema": ^1.0.0-alpha.3
     "@jupyterlab/application": ^4.0.0
     "@jupyterlab/builder": ^4.0.0
     "@jupyterlab/coreutils": ^6.0.0
@@ -915,30 +915,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jupytercad/occ-worker@npm:^1.0.0-alpha.2":
-  version: 1.0.0-alpha.2
-  resolution: "@jupytercad/occ-worker@npm:1.0.0-alpha.2"
+"@jupytercad/occ-worker@npm:^1.0.0-alpha.3":
+  version: 1.0.0-alpha.3
+  resolution: "@jupytercad/occ-worker@npm:1.0.0-alpha.3"
   dependencies:
-    "@jupytercad/opencascade": ^1.0.0-alpha.2
-    "@jupytercad/schema": ^1.0.0-alpha.2
+    "@jupytercad/opencascade": ^1.0.0-alpha.3
+    "@jupytercad/schema": ^1.0.0-alpha.3
     "@lumino/coreutils": ^2.0.0
     uuid: ^8.3.2
-  checksum: cff8a6ddba2f8188618012d8a85ac39598483ac7182845beff7c8c23ab5d65c6918a307a0483f7f4f5101cdada2c57c79798f4dffc33f929f6285c7369666f8f
+  checksum: 3f5d63966895cbe7c0f8bb3416b1cd0d8e5c839c43fa01cd03d8525a19a4780831181639dd9fd7f5353a94a4f924d7275a8c430889dae75aeb088fba5db51564
   languageName: node
   linkType: hard
 
-"@jupytercad/opencascade@npm:^1.0.0-alpha.2":
-  version: 1.0.0-alpha.2
-  resolution: "@jupytercad/opencascade@npm:1.0.0-alpha.2"
-  dependencies:
-    opencascade.js: beta
-  checksum: aab22899c3a62fe09eefcc7410610a8d7e987c203e4aea707db428c2664c25295c51777a01b8a80cd34aab9e88be1261ddad37543dfabfe56ef08ce32e17657c
+"@jupytercad/opencascade@npm:^1.0.0-alpha.3":
+  version: 1.0.0-alpha.3
+  resolution: "@jupytercad/opencascade@npm:1.0.0-alpha.3"
+  checksum: ff7eacf62b80ec1e0163b51a9068a34cef226c2acf1d8bf087fe6222fc55d29cbf0e27991aba1ca85e27eb3233c3095395bd84e78d2aa75379c8e5ba934cc37b
   languageName: node
   linkType: hard
 
-"@jupytercad/schema@file:../jupytercad/packages/schema::locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A.":
-  version: 1.0.0-alpha.2
-  resolution: "@jupytercad/schema@file:../jupytercad/packages/schema#../jupytercad/packages/schema::hash=ee6690&locator=%40jupytercad%2Fjupytercad-salome%40workspace%3A."
+"@jupytercad/schema@npm:^1.0.0-alpha.3":
+  version: 1.0.0-alpha.3
+  resolution: "@jupytercad/schema@npm:1.0.0-alpha.3"
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^9.0.9
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
@@ -952,7 +950,7 @@ __metadata:
     ajv: ^8.12.0
     json-schema-to-typescript: ^10.1.5
     yjs: ^13.5.40
-  checksum: b41ea010f55abc26c7ddc9df699336e02d4adae8c7eacbab5318dadafa174e18fd1d8908bdd2ba9b658cc42585885fc77a16e7068c26aed064edd51b6afbe3fb
+  checksum: 80c4e02c96a938e715d9d029cf5e9b9013a8d478a25ab584a250e3202071c5504b4966696f294e18d501bd5010401c6f1b3bf24b04172f9ef772228de520c3b4
   languageName: node
   linkType: hard
 
@@ -6726,15 +6724,6 @@ __metadata:
   bin:
     openapi: bin/index.js
   checksum: e464e12c60da64b1f20b15c2a66490ef762624069e67da1fa85c26bd9aba855afb8fd47ab8291c445797070821eb53a9a40803863da11ea10a03c9e359f53f41
-  languageName: node
-  linkType: hard
-
-"opencascade.js@npm:beta":
-  version: 2.0.0-beta.b5ff984
-  resolution: "opencascade.js@npm:2.0.0-beta.b5ff984"
-  peerDependencies:
-    ws: ^8.5.0
-  checksum: 751fa25e3625497fb562d4c586e884020478b9c5aeae61c43ce10bac9a011826f5c7518c2126fc6b1f79792c83bbc4d43069bff40dfbee4e48137cb9a496424e
   languageName: node
   linkType: hard
 
