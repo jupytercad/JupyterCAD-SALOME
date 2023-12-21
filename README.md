@@ -3,97 +3,44 @@
 [![Github Actions Status](https://github.com/jupytercad/jupytercad-salome/workflows/Build/badge.svg)](https://github.com/jupytercad/jupytercad-salome/actions/workflows/build.yml)
 A JupyterLab extension.
 
-This extension is composed of a Python package named `jupytercad_salome`
-for the server extension and a NPM package named `jupytercad-salome`
-for the frontend extension.
+JupyterCAD-Salome is an extension for JupyterCAD which enables users to generate meshes from their creations in JupyterCAD, leveraging the powerful meshing capabilities of Salome, a leading open-source platform for numerical simulation.
 
-## Requirements
+JupyterCAD-Salome is currently in active development.
 
-- JupyterLab >= 4.0.0
+[Creating a mesh with JupyterCAD in combination with JupyterCAD-Salome](https://github.com/martinRenou/jupytercad-salome/assets/21197331/733f5207-0e2f-4e33-9158-fb4289706463)
 
-## Install
+As you can see in the video above, JupyterCAD-Salome will add a new button to the JupyterCAD toolbar allowing to generate a mesh from the currently selected object in the JupyterCAD viewer.
 
-To install the extension, execute:
+![JupyterCAD-Salome toolbar option](https://github.com/martinRenou/jupytercad-salome/assets/21197331/8a97527f-c1e2-466e-b122-483de626dc6e)
 
-```bash
-pip install jupytercad_salome
-```
+## Try it live
 
-## Uninstall
+A deployment is published for you to give it a try:
+https://trungleduc-jupytercad.hf.space/lab
 
-To remove the extension, execute:
+This demo is entirely collaborative, which means anybody getting to this link will
+see what you do and be able to collaborate with you.
 
-```bash
-pip uninstall jupytercad_salome
-```
+You can make your own deployment on HuggingFace pressing the "⋮" button on the top-right corner of the page, then "Duplicate this Space"
 
-## Troubleshoot
+![Duplicate app button](https://github.com/martinRenou/jupytercad-salome/assets/21197331/77909be2-6263-4149-b9c0-ab837d86a82d)
 
-If you are seeing the frontend extension, but it is not working, check
-that the server extension is enabled:
+## Local Install
 
-```bash
-jupyter server extension list
-```
+1. Install Salome from https://www.salome-platform.org/?page_id=2430
+2. To install the extension, execute:
+   ```bash
+   pip install jupyterlab
+   pip install --pre jupytercad jupytercad-salome
+   ```
 
-If the server extension is installed and enabled, but you are not seeing
-the frontend extension, check the frontend extension is installed:
+Then you can either start JupyterLab or JupyterCAD:
 
 ```bash
-jupyter labextension list
-```
-
-## Contributing
-
-### Development install
-
-Note: You will need NodeJS to build the extension package.
-
-The `jlpm` command is JupyterLab's pinned version of
-[yarn](https://yarnpkg.com/) that is installed with JupyterLab. You may use
-`yarn` or `npm` in lieu of `jlpm` below.
-
-```bash
-# Clone the repo to your local environment
-# Change directory to the jupytercad_salome directory
-# Install package in development mode
-pip install -e "."
-# Link your development version of the extension with JupyterLab
-jupyter labextension develop . --overwrite
-# Server extension must be manually installed in develop mode
-jupyter server extension enable jupytercad_salome
-# Rebuild extension Typescript source after making changes
-jlpm build
-```
-
-You can watch the source directory and run JupyterLab at the same time in different terminals to watch for changes in the extension's source and automatically rebuild the extension.
-
-```bash
-# Watch the source directory in one terminal, automatically rebuilding when needed
-jlpm watch
-# Run JupyterLab in another terminal
 jupyter lab
+# OR
+jupyter cad
 ```
-
-With the watch command running, every saved change will immediately be built locally and available in your running JupyterLab. Refresh JupyterLab to load the change in your browser (you may need to wait several seconds for the extension to be rebuilt).
-
-By default, the `jlpm build` command generates the source maps for this extension to make it easier to debug using the browser dev tools. To also generate source maps for the JupyterLab core extensions, you can run the following command:
-
-```bash
-jupyter lab build --minimize=False
-```
-
-### Development uninstall
-
-```bash
-# Server extension must be manually disabled in develop mode
-jupyter server extension disable jupytercad_salome
-pip uninstall jupytercad_salome
-```
-
-In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
-command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
-folder is located. Then you can remove the symlink named `jupytercad-salome` within that folder.
 
 ### Packaging the extension
 
