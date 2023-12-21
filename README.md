@@ -55,7 +55,7 @@ Whenever the user clicks on the toolbar button, they are prompted with configuri
 ![Meshing configuration](https://github.com/martinRenou/jupytercad-salome/assets/21197331/15b03e37-3716-4f82-b5bf-b99abed6c016)
 
 > [!NOTE]
-> This user interface is generated automatically from the endpoint spec.
+> This user interface is generated automatically from [this schema file](https://github.com/jupytercad/jupytercad-salome/blob/main/src/schema.json).
 
 Once the API call is made, the server will compute the mesh using [smesh](https://www.salome-platform.org/?page_id=374) and send back the response with the computed mesh to the client.
 
