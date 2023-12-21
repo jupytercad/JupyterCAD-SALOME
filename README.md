@@ -51,7 +51,7 @@ JupyterCAD-Salome consists of two components:
 
 Whenever the user clicks on the toolbar button, they are prompted with configuring the API call:
 
-image 1
+![Meshing configuration](https://github.com/martinRenou/jupytercad-salome/assets/21197331/15b03e37-3716-4f82-b5bf-b99abed6c016)
 
 > [!NOTE]
 > This user interface is generated automatically from the endpoint spec.
@@ -60,7 +60,7 @@ Once the API call is made, the server will compute the mesh using [smesh](https:
 
 The user can later-on re-generated the mesh with different inputs:
 
-image 2
+![Configuring the mesh afterwards](https://github.com/martinRenou/jupytercad-salome/assets/21197331/9d58e5df-c952-4f5d-b4f7-be189fc80b55)
 
 ### Packaging the extension
 
