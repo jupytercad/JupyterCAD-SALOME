@@ -9,7 +9,7 @@ JupyterCAD-Salome is currently in active development.
 
 [Creating a mesh with JupyterCAD in combination with JupyterCAD-Salome](https://github.com/martinRenou/jupytercad-salome/assets/21197331/733f5207-0e2f-4e33-9158-fb4289706463)
 
-As you can see in the video above, JupyterCAD-Salome will add a new button to the JupyterCAD toolbar allowing to generate a mesh from the currently selected object.
+As you can see in the video above, JupyterCAD-Salome will add a new button to the JupyterCAD toolbar allowing to generate a mesh from the currently selected object in the JupyterCAD viewer.
 
 ![JupyterCAD-Salome toolbar option](https://github.com/martinRenou/jupytercad-salome/assets/21197331/8a97527f-c1e2-466e-b122-483de626dc6e)
 
