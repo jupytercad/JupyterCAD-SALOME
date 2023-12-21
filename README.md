@@ -42,6 +42,25 @@ jupyter lab
 jupyter cad
 ```
 
+## Implementation
+
+JupyterCAD-Salome consists of two components:
+- a jupyter-server endpoint which is ready to compute the mesh upon client demand. The enpoint is defined using [an OpenAPI spec](https://github.com/jupytercad/jupytercad-salome/blob/main/jupytercad_salome/schema/openapi.yaml).
+- a client plugin for JupyterCAD which adds a toolbar button which calls this endpoint.
+
+Whenever the user clicks on the toolbar button, they are prompted with configuring the API call:
+
+image 1
+
+> [!NOTE]
+> This user interface is generated automatically from the endpoint spec.
+
+Once the API call is made, the server will compute the mesh using [smesh](https://www.salome-platform.org/?page_id=374) and send back the response with the computed mesh to the client.
+
+The user can later-on re-generated the mesh with different inputs:
+
+image 2
+
 ### Packaging the extension
 
 See [RELEASE](RELEASE.md)
