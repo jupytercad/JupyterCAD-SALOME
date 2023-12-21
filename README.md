@@ -19,10 +19,10 @@ see what you do and be able to collaborate with you.
 
 1. Install Salome from https://www.salome-platform.org/?page_id=2430
 2. To install the extension, execute:
-    ```bash
-    pip install jupyterlab
-    pip install --pre jupytercad jupytercad-salome
-    ```
+   ```bash
+   pip install jupyterlab
+   pip install --pre jupytercad jupytercad-salome
+   ```
 
 Then you can either start JupyterLab or JupyterCAD:
 
