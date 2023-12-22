@@ -7,7 +7,7 @@ JupyterCAD-Salome is an extension for JupyterCAD which enables users to generate
 
 JupyterCAD-Salome is currently in active development.
 
-[Creating a mesh with JupyterCAD in combination with JupyterCAD-Salome](https://github.com/martinRenou/jupytercad-salome/assets/21197331/733f5207-0e2f-4e33-9158-fb4289706463)
+[Creating a mesh with JupyterCAD in combination with JupyterCAD-Salome](https://github.com/jupytercad/jupytercad-salome/assets/4451292/a7fec2cd-fb74-47a6-bb32-d6ee7c7550c8)
 
 As you can see in the video above, JupyterCAD-Salome will add a new button to the JupyterCAD toolbar allowing to generate a mesh from the currently selected object in the JupyterCAD viewer.
 
