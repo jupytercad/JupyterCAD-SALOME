@@ -1,17 +1,16 @@
 # jupytercad_salome
 
 [![Github Actions Status](https://github.com/jupytercad/jupytercad-salome/workflows/Build/badge.svg)](https://github.com/jupytercad/jupytercad-salome/actions/workflows/build.yml)
-A JupyterLab extension.
 
-JupyterCAD-Salome is an extension for JupyterCAD which enables users to generate meshes from their creations in JupyterCAD, leveraging the powerful meshing capabilities of Salome, a leading open-source platform for numerical simulation.
+`JupyterCAD-Salome` is an extension for JupyterCAD which enables users to generate meshes from their creations in JupyterCAD, leveraging the powerful meshing capabilities of Salome, a leading open-source platform for numerical simulation.
 
-JupyterCAD-Salome is currently in active development.
+`JupyterCAD-Salome` is currently in active development.
 
-[Creating a mesh with JupyterCAD in combination with JupyterCAD-Salome](https://github.com/jupytercad/jupytercad-salome/assets/4451292/a7fec2cd-fb74-47a6-bb32-d6ee7c7550c8)
+[Creating a mesh with JupyterCAD in combination with `JupyterCAD-Salome`](https://github.com/jupytercad/jupytercad-salome/assets/4451292/a7fec2cd-fb74-47a6-bb32-d6ee7c7550c8)
 
-As you can see in the video above, JupyterCAD-Salome will add a new button to the JupyterCAD toolbar allowing to generate a mesh from the currently selected object in the JupyterCAD viewer.
+As you can see in the video above, `JupyterCAD-Salome` will add a new button to the JupyterCAD toolbar allowing to generate a mesh from the currently selected object in the JupyterCAD viewer.
 
-![JupyterCAD-Salome toolbar option](https://github.com/martinRenou/jupytercad-salome/assets/21197331/8a97527f-c1e2-466e-b122-483de626dc6e)
+![`JupyterCAD-Salome` toolbar option](https://github.com/martinRenou/jupytercad-salome/assets/21197331/8a97527f-c1e2-466e-b122-483de626dc6e)
 
 ## Try it live
 
