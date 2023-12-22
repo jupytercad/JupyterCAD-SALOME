@@ -58,6 +58,9 @@ components:
         mesh:
           type: string
           description: The string representation of the generated mesh geometry
+        error:
+          type: string
+          description: The error message
         format:
           type: string
           example: obj

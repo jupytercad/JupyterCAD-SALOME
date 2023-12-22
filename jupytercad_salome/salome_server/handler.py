@@ -12,7 +12,15 @@ class SalomeHandler(APIHandler):
     @tornado.web.authenticated
     def post(self):
         if build_mesh is None:
-            self.finish(json.dumps({"mesh": "", "format": "obj"}))
+            self.finish(
+                json.dumps(
+                    {
+                        "mesh": "",
+                        "format": "obj",
+                        "error": "Can not import Salome, please check if Salome is correctly installed",
+                    }
+                )
+            )
         else:
             data = self.get_json_body()
             geometry = data.get("geometry", None)

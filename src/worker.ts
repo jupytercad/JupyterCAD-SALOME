@@ -6,6 +6,7 @@ import {
   MainAction,
   WorkerAction
 } from '@jupytercad/schema';
+import { showErrorMessage } from '@jupyterlab/apputils';
 import { PromiseDelegate } from '@lumino/coreutils';
 import { v4 as uuid } from 'uuid';
 
@@ -64,9 +65,13 @@ export class SalomeWorker implements IJCadWorker {
         const id = msg.id;
         const payload: { jcObject: IDict; postResult: ExecutionResponse }[] =
           [];
-        allRes.forEach((postResult, idx) =>
-          payload.push({ postResult, jcObject: jcObjects[idx] })
-        );
+        allRes.forEach((postResult, idx) => {
+          if (postResult.error) {
+            showErrorMessage('Execution Error', postResult.error);
+          } else {
+            payload.push({ postResult, jcObject: jcObjects[idx] });
+          }
+        });
         const handler = this._messageHandlers.get(id);
         if (handler) {
           handler({ action: MainAction.DISPLAY_POST, payload });
