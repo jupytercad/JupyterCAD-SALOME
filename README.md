@@ -47,6 +47,9 @@ jupyter cad
 
 - A `jupyter-server` endpoint which is ready to compute the mesh upon client demand. This endpoint is defined using [an OpenAPI spec](https://github.com/jupytercad/jupytercad-salome/blob/main/jupytercad_salome/schema/openapi.yaml). Users are not bound to the provided jupyter-server endpoint, `JupyterCAD-Salome` can connect to any server implementing the OpenAPI spec.
 
+> [!NOTE]
+> To use `JupyterCAD-Salome` with a different Salome server, set the `SALOME_SERVER_BASE_URL` environment variable to your server address before starting `JupyterLab`.
+
 - A client plugin for JupyterCAD adding UI elements to interact with the mesh-generation endpoint. Whenever the user clicks on the toolbar button, they are prompted with a dialog to configure the API call:
 
 ![Meshing configuration](https://github.com/martinRenou/jupytercad-salome/assets/21197331/15b03e37-3716-4f82-b5bf-b99abed6c016)
