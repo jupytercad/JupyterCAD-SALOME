@@ -1,4 +1,5 @@
 import json
+import os
 
 from jupyter_server.base.handlers import APIHandler
 from jupyter_server.utils import url_path_join
@@ -15,10 +16,11 @@ class RouteHandler(APIHandler):
         """Return the base url of the jupytercad salome server.
         Use ``None`` if it is the same JupyterLab server
         """
+        base_url_env = os.getenv("SALOME_SERVER_BASE_URL", None)
         self.finish(
             json.dumps(
                 {
-                    "backend_url": None,
+                    "backend_url": base_url_env,
                 }
             )
         )
