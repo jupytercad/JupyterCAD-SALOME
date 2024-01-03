@@ -1,6 +1,7 @@
 from pathlib import Path
 import salome
 import os
+import base64
 from tempfile import NamedTemporaryFile
 from salome.geom import geomBuilder
 from salome.smesh import smeshBuilder
@@ -34,19 +35,18 @@ def build_mesh(brep_string: str, number_of_segment: int, jcad_path: str) -> str:
         raise RuntimeError("Problem during mesh computation")
     if jcad_path:
         med_path = Path.cwd() / Path(jcad_path.replace(".jcad", ".med"))
-        mesh.ExportMED(str(med_path), 0)
-    med_tmp = NamedTemporaryFile(suffix=".stl", delete=False)
+        mesh.ExportMED(str(med_path), 1)
+    stl_tmp = NamedTemporaryFile(suffix=".stl", delete=False)
 
-    mesh.ExportSTL(med_tmp.name, 1)
-    med_tmp.seek(0)
+    mesh.ExportSTL(stl_tmp.name, 0)  # O means exporting in binary format
+    stl_tmp.seek(0)
 
-    with open(med_tmp.name, "r") as f_obj:
+    with open(stl_tmp.name, "rb") as f_obj:
         content = f_obj.read()
-
     try:
-        os.remove(med_tmp.name)
+        os.remove(stl_tmp.name)
         os.remove(brep_temp.name)
     except Exception:
         pass
-
-    return content
+    base64_content = base64.b64encode(content).decode("utf8")
+    return base64_content
