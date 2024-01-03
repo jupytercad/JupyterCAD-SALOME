@@ -1,7 +1,9 @@
 import {
-  IDict,
+  IDisplayPost,
+  IJCadObject,
   IJCadWorker,
   IJupyterCadTracker,
+  IPostResult,
   IWorkerMessageBase,
   MainAction,
   WorkerAction
@@ -45,9 +47,12 @@ export class SalomeWorker implements IJCadWorker {
     }
     if (msg.payload && Object.keys(msg.payload).length > 0) {
       const promises: Promise<ExecutionResponse>[] = [];
-      const jcObjects: IDict[] = [];
+      const jcObjects: IJCadObject[] = [];
       for (const key in msg.payload) {
-        const item = msg.payload[key] as { occBrep: string; jcObject: IDict };
+        const item = msg.payload[key] as {
+          occBrep: string;
+          jcObject: IJCadObject;
+        };
         const numberOfSegments =
           item.jcObject?.parameters?.NumberOfSegments ?? 15;
         const res = this._appClient.execute.generateMesh({
@@ -63,16 +68,26 @@ export class SalomeWorker implements IJCadWorker {
       }
       Promise.all(promises).then(allRes => {
         const id = msg.id;
-        const payload: { jcObject: IDict; postResult: ExecutionResponse }[] =
-          [];
-        allRes.forEach((postResult, idx) => {
-          if (postResult.error) {
-            showErrorMessage('Execution Error', postResult.error);
+        const payload: {
+          jcObject: IJCadObject;
+          postResult: IPostResult;
+        }[] = [];
+        allRes.forEach((postResponse, idx) => {
+          if (postResponse.error) {
+            showErrorMessage('Execution Error', postResponse.error);
           } else {
-            payload.push({ postResult, jcObject: jcObjects[idx] });
+            payload.push({
+              postResult: {
+                format: 'STL',
+                binary: true,
+                value: postResponse.mesh
+              },
+              jcObject: jcObjects[idx]
+            });
           }
         });
-        const handler = this._messageHandlers.get(id);
+        const handler: (msg: IDisplayPost) => void =
+          this._messageHandlers.get(id);
         if (handler) {
           handler({ action: MainAction.DISPLAY_POST, payload });
         }

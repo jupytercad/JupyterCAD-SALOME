@@ -837,15 +837,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jupytercad/base@npm:^1.0.0-alpha.3":
-  version: 1.0.0-alpha.3
-  resolution: "@jupytercad/base@npm:1.0.0-alpha.3"
+"@jupytercad/base@npm:^1.0.0-alpha.4":
+  version: 1.0.0-alpha.4
+  resolution: "@jupytercad/base@npm:1.0.0-alpha.4"
   dependencies:
     "@deathbeds/jupyterlab-rjsf": ^1.1.0
     "@jupyter/docprovider": ^1.0.0
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
-    "@jupytercad/occ-worker": ^1.0.0-alpha.3
-    "@jupytercad/schema": ^1.0.0-alpha.3
+    "@jupytercad/occ-worker": ^1.0.0-alpha.4
+    "@jupytercad/schema": ^1.0.0-alpha.4
     "@jupyterlab/application": ^4.0.0
     "@jupyterlab/apputils": ^4.0.0
     "@jupyterlab/coreutils": ^6.0.0
@@ -872,7 +872,7 @@ __metadata:
     three-mesh-bvh: ^0.5.17
     uuid: ^8.3.2
     yjs-widgets: ^0.3.3
-  checksum: 88671c8d4c0c0cb790345a3b4a6c2fcd53a5cf9e2055eae2939f3d290fe098e0c5dd26b6e82cd23d2262287048887ff9e2b3641f18bd63c5b5687342b941c5eb
+  checksum: 785e92dfb986c261f7af26176372d23deec5437d4ba456b0279b42c83a4dedc9e613086b5c54034e9e6e89b8a139351ac6dc2b615e0da1b592c0e68d63bbfcc0
   languageName: node
   linkType: hard
 
@@ -880,8 +880,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jupytercad/jupytercad-salome@workspace:."
   dependencies:
-    "@jupytercad/base": ^1.0.0-alpha.3
-    "@jupytercad/schema": ^1.0.0-alpha.3
+    "@jupytercad/base": ^1.0.0-alpha.4
+    "@jupytercad/schema": ^1.0.0-alpha.4
     "@jupyterlab/application": ^4.0.0
     "@jupyterlab/builder": ^4.0.0
     "@jupyterlab/coreutils": ^6.0.0
@@ -915,28 +915,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jupytercad/occ-worker@npm:^1.0.0-alpha.3":
-  version: 1.0.0-alpha.3
-  resolution: "@jupytercad/occ-worker@npm:1.0.0-alpha.3"
+"@jupytercad/occ-worker@npm:^1.0.0-alpha.4":
+  version: 1.0.0-alpha.4
+  resolution: "@jupytercad/occ-worker@npm:1.0.0-alpha.4"
   dependencies:
-    "@jupytercad/opencascade": ^1.0.0-alpha.3
-    "@jupytercad/schema": ^1.0.0-alpha.3
+    "@jupytercad/opencascade": ^1.0.0-alpha.4
+    "@jupytercad/schema": ^1.0.0-alpha.4
     "@lumino/coreutils": ^2.0.0
     uuid: ^8.3.2
-  checksum: 3f5d63966895cbe7c0f8bb3416b1cd0d8e5c839c43fa01cd03d8525a19a4780831181639dd9fd7f5353a94a4f924d7275a8c430889dae75aeb088fba5db51564
+  checksum: cd92f8d006066c42d7bc46c30fea11492d0a65936b933014d033fe35b7d4daac6d531a16de126d7f5a36dd6f10b4fed84036a33a9cb10cf272230b225bd4d894
   languageName: node
   linkType: hard
 
-"@jupytercad/opencascade@npm:^1.0.0-alpha.3":
-  version: 1.0.0-alpha.3
-  resolution: "@jupytercad/opencascade@npm:1.0.0-alpha.3"
-  checksum: ff7eacf62b80ec1e0163b51a9068a34cef226c2acf1d8bf087fe6222fc55d29cbf0e27991aba1ca85e27eb3233c3095395bd84e78d2aa75379c8e5ba934cc37b
+"@jupytercad/opencascade@npm:^1.0.0-alpha.4":
+  version: 1.0.0-alpha.4
+  resolution: "@jupytercad/opencascade@npm:1.0.0-alpha.4"
+  checksum: 79ea92d104b09cfc8c6e54b91341906a143745aae1b9aef5dc8ba477b80b0f3dbfb5e13a3b78129697ec35b92a2cc84fc47403d1adf8b3c6e1033453e1939e24
   languageName: node
   linkType: hard
 
-"@jupytercad/schema@npm:^1.0.0-alpha.3":
-  version: 1.0.0-alpha.3
-  resolution: "@jupytercad/schema@npm:1.0.0-alpha.3"
+"@jupytercad/schema@npm:^1.0.0-alpha.4":
+  version: 1.0.0-alpha.4
+  resolution: "@jupytercad/schema@npm:1.0.0-alpha.4"
   dependencies:
     "@apidevtools/json-schema-ref-parser": ^9.0.9
     "@jupyter/ydoc": ^0.3.4 || ^1.0.2
@@ -950,7 +950,7 @@ __metadata:
     ajv: ^8.12.0
     json-schema-to-typescript: ^10.1.5
     yjs: ^13.5.40
-  checksum: 80c4e02c96a938e715d9d029cf5e9b9013a8d478a25ab584a250e3202071c5504b4966696f294e18d501bd5010401c6f1b3bf24b04172f9ef772228de520c3b4
+  checksum: 06932e97c2641c10495c000c59c256037a34dd59cdfda859ead9da933677382d1e1be37b18fa482bf9ee9c93668df1430d47d85837cc9e5e1773a742af545ae7
   languageName: node
   linkType: hard
 
@@ -8518,11 +8518,11 @@ __metadata:
 
 "typescript@patch:typescript@~5.0.2#~builtin<compat/typescript>":
   version: 5.0.4
-  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=85af82"
+  resolution: "typescript@patch:typescript@npm%3A5.0.4#~builtin<compat/typescript>::version=5.0.4&hash=b5f058"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bb309d320c59a26565fb3793dba550576ab861018ff3fd1b7fccabbe46ae4a35546bc45f342c0a0b6f265c801ccdf64ffd68f548f117ceb7f0eac4b805cd52a9
+  checksum: d26b6ba97b6d163c55dbdffd9bbb4c211667ebebc743accfeb2c8c0154aace7afd097b51165a72a5bad2cf65a4612259344ff60f8e642362aa1695c760d303ac
   languageName: node
   linkType: hard
 
