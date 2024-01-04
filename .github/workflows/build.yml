@@ -117,6 +117,7 @@ jobs:
           context: ./ui-tests
           file: ./ui-tests/Dockerfile
           tags: jupytercad_salome
+          load: true
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
@@ -139,11 +140,23 @@ jobs:
         run: npx playwright install chromium
         working-directory: ui-tests
 
+      - name: Start Jupyterlab
+        shell: bash -l {0}
+        working-directory: ui-tests
+        run: |
+          docker image ls
+          docker run -d -p 8888:8888 jupytercad_salome:latest
+
+      - name: Wait for Jupyterlab
+        uses: ifaxity/wait-on-action@v1
+        with:
+          resource: http-get://localhost:8888/lab
+          timeout: 360000
+
       - name: Execute integration tests
         shell: bash -l {0}
         working-directory: ui-tests
         run: |
-          docker run -p 8888:8888 jupytercad_salome:latest
           npx playwright test
 
       - name: Upload Playwright Test report
