@@ -1,6 +1,6 @@
 {
     "name": "@jupytercad/jupytercad-salome",
-    "version": "1.0.0-a5",
+    "version": "1.0.0-a6",
     "description": "A JupyterLab extension.",
     "keywords": [
         "jupyter",
