@@ -123,3 +123,7 @@ dmypy.json
 .ruff_cache
 .jupyter_ystore.db
 _client/
+
+**/ui-tests/test-results/
+**/ui-tests/playwright-report/
+**/ui-tests/*.whl
