@@ -46,10 +46,10 @@ test.describe('UI Test', () => {
         .getByLabel('notebook content')
         .getByText('New JCAD File')
         .click();
-      await page.getByRole('button', { name: 'New Box' }).click();
-      await page.getByRole('button', { name: 'Submit' }).click();
-      await page.getByRole('button', { name: 'Mesh creation' }).click();
-      await page.getByRole('button', { name: 'Submit' }).click();
+      await page.getByTitle('New Box').click();
+      await page.getByText('Submit', { exact: true }).click();
+      await page.getByTitle('Mesh creation').click();
+      await page.getByText('Submit', { exact: true }).click();
       await page.waitForTimeout(1000);
       await page
         .getByRole('tablist', { name: 'main sidebar' })
