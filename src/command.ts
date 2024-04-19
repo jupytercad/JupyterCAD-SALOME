@@ -3,7 +3,8 @@ import {
   IDict,
   IJCadObject,
   IJupyterCadModel,
-  IJupyterCadTracker
+  IJupyterCadTracker,
+  JCadWorkerSupportedFormat
 } from '@jupytercad/schema';
 import { JupyterFrontEnd } from '@jupyterlab/application';
 import { showErrorMessage } from '@jupyterlab/apputils';
@@ -11,6 +12,7 @@ import { ITranslator } from '@jupyterlab/translation';
 
 import { gridIcon } from './icon';
 import formSchema from './schema.json';
+import { WORKER_ID } from './worker';
 
 export namespace CommandIDs {
   export const mesh = 'jupytercad:salome:mesh';
@@ -33,24 +35,36 @@ export function addCommands(
 namespace Private {
   const meshOperator = {
     title: 'Mesh parameters',
-    shape: 'Post::SalomeMesh',
     default: (model: IJupyterCadModel) => {
       const objects = model.getAllObject();
-      const selected = model.localState?.selected?.value || [];
+      const selected = model.localState?.selected?.value;
+      let objectName = objects[0].name ?? '';
+      if (selected) {
+        for (const key in selected) {
+          if (selected[key].type === 'shape') {
+            objectName = key;
+            break;
+          }
+        }
+      }
       return {
         Name: newName('Mesh', model),
-        Object: selected.length > 0 ? selected[0] : objects[0].name ?? '',
+        Object: objectName,
         NumberOfSegments: 10
       };
     },
     syncData: (model: IJupyterCadModel) => {
       return (props: IDict) => {
         const { Name, ...parameters } = props;
-        const objectModel = {
-          shape: 'Post::SalomeMesh',
+        const objectModel: IJCadObject = {
+          shape: 'Post::SalomeMesh' as any,
           parameters,
           visible: true,
-          name: Name
+          name: Name,
+          shapeMetadata: {
+            shapeFormat: JCadWorkerSupportedFormat.BREP,
+            workerId: WORKER_ID
+          }
         };
         const sharedModel = model.sharedModel;
         if (sharedModel) {
@@ -60,7 +74,7 @@ namespace Private {
             }
 
             if (!sharedModel.objectExists(objectModel.name)) {
-              sharedModel.addObject(objectModel as IJCadObject);
+              sharedModel.addObject(objectModel);
             } else {
               showErrorMessage(
                 'The object already exists',
