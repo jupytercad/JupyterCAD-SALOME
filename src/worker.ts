@@ -5,6 +5,7 @@ import {
   IJupyterCadTracker,
   IPostResult,
   IWorkerMessageBase,
+  JCadWorkerSupportedFormat,
   MainAction,
   WorkerAction
 } from '@jupytercad/schema';
@@ -14,6 +15,7 @@ import { v4 as uuid } from 'uuid';
 
 import { AppClient, ExecutionRequest, ExecutionResponse } from './_client';
 
+export const WORKER_ID = 'jupytercad-salome-worker';
 export class SalomeWorker implements IJCadWorker {
   constructor(options: SalomeWorker.IOptions) {
     this._appClient = options.appClient;
@@ -23,6 +25,7 @@ export class SalomeWorker implements IJCadWorker {
   get ready(): Promise<void> {
     return this._ready.promise;
   }
+  shapeFormat = JCadWorkerSupportedFormat.BREP;
 
   register(options: {
     messageHandler: ((msg: any) => void) | ((msg: any) => Promise<void>);

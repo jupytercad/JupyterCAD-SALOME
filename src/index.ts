@@ -17,10 +17,10 @@ import { ServerConnection } from '@jupyterlab/services';
 import { ITranslator, nullTranslator } from '@jupyterlab/translation';
 
 import { AppClient } from './_client/AppClient';
-import { CommandIDs, addCommands } from './command';
+import { addCommands, CommandIDs } from './command';
 import { API_NAMESPACE, requestAPI } from './handler';
 import formSchema from './schema.json';
-import { SalomeWorker } from './worker';
+import { SalomeWorker, WORKER_ID } from './worker';
 
 /**
  * Initialization data for the jupytercad-salome extension.
@@ -64,7 +64,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
       TOKEN: settings.token
     });
     const worker = new SalomeWorker({ appClient, tracker });
-    workerRegistry.registerWorker('jupytercad-salome:worker', worker);
+    workerRegistry.registerWorker(WORKER_ID, worker);
     schemaRegistry.registerSchema('Post::SalomeMesh', formSchema);
 
     addCommands(app, tracker, translator);
