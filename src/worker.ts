@@ -3,8 +3,8 @@ import {
   IJCadObject,
   IJCadWorker,
   IJupyterCadTracker,
+  IPostOperatorInput,
   IPostResult,
-  IWorkerMessageBase,
   JCadWorkerSupportedFormat,
   MainAction,
   WorkerAction
@@ -13,7 +13,7 @@ import { showErrorMessage } from '@jupyterlab/apputils';
 import { PromiseDelegate } from '@lumino/coreutils';
 import { v4 as uuid } from 'uuid';
 
-import { AppClient, ExecutionRequest, ExecutionResponse } from './_client';
+import { AppClient, ExecutionRequest } from './_client';
 
 export const WORKER_ID = 'jupytercad-salome-worker';
 export class SalomeWorker implements IJCadWorker {
@@ -44,55 +44,55 @@ export class SalomeWorker implements IJCadWorker {
     this._messageHandlers.delete(id);
   }
 
-  postMessage(msg: IWorkerMessageBase): void {
+  postMessage(msg: {
+    id: string;
+    action: WorkerAction;
+    payload?: IPostOperatorInput;
+  }): void {
     if (msg.action !== WorkerAction.POSTPROCESS) {
       return;
     }
-    if (msg.payload && Object.keys(msg.payload).length > 0) {
-      const promises: Promise<ExecutionResponse>[] = [];
-      const jcObjects: IJCadObject[] = [];
-      for (const key in msg.payload) {
-        const item = msg.payload[key] as {
-          occBrep: string;
-          jcObject: IJCadObject;
-        };
-        const numberOfSegments =
-          item.jcObject?.parameters?.NumberOfSegments ?? 15;
-        const res = this._appClient.execute.generateMesh({
-          requestBody: {
-            sourcePath: this._tracker.currentWidget?.context.path,
-            geometry: item.occBrep,
-            format: ExecutionRequest.format.BREP,
-            numberOfSegments
-          }
-        });
-        promises.push(res);
-        jcObjects.push(item.jcObject);
+
+    if (msg.payload) {
+      const { jcObject, postShape } = msg.payload;
+      if (!postShape) {
+        return;
       }
-      Promise.all(promises).then(allRes => {
+
+      const numberOfSegments = jcObject?.parameters?.NumberOfSegments ?? 15;
+      const p = this._appClient.execute.generateMesh({
+        requestBody: {
+          sourcePath: this._tracker.currentWidget?.context.path,
+          geometry: postShape as string,
+          format: ExecutionRequest.format.BREP,
+          numberOfSegments
+        }
+      });
+
+      p.then(postResponse => {
         const id = msg.id;
         const payload: {
           jcObject: IJCadObject;
           postResult: IPostResult;
         }[] = [];
-        allRes.forEach((postResponse, idx) => {
-          if (postResponse.error) {
-            showErrorMessage('Execution Error', postResponse.error);
-          } else {
-            payload.push({
-              postResult: {
-                format: 'STL',
-                binary: true,
-                value: postResponse.mesh
-              },
-              jcObject: jcObjects[idx]
-            });
+        if (postResponse.error) {
+          showErrorMessage('Execution Error', postResponse.error);
+        } else {
+          payload.push({
+            postResult: {
+              format: 'STL',
+              binary: true,
+              value: postResponse.mesh
+            },
+            jcObject
+          });
+        }
+        if (payload.length > 0) {
+          const handler: (msg: IDisplayPost) => void =
+            this._messageHandlers.get(id);
+          if (handler) {
+            handler({ action: MainAction.DISPLAY_POST, payload });
           }
-        });
-        const handler: (msg: IDisplayPost) => void =
-          this._messageHandlers.get(id);
-        if (handler) {
-          handler({ action: MainAction.DISPLAY_POST, payload });
         }
       });
     }
