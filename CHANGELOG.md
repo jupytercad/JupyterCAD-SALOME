@@ -2,6 +2,24 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 2.0.0
+
+([Full Changelog](https://github.com/jupytercad/JupyterCAD-SALOME/compare/v2.0.0a0...739d6c1019f4a8770771aefdcaf264cdc1e2f218))
+
+### Enhancements made
+
+- Update jupytercad 2.0.0 [#18](https://github.com/jupytercad/JupyterCAD-SALOME/pull/18) ([@martinRenou](https://github.com/martinRenou))
+
+### Maintenance and upkeep improvements
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupytercad/JupyterCAD-SALOME/graphs/contributors?from=2024-04-22&to=2024-07-02&type=c))
+
+[@martinRenou](https://github.com/search?q=repo%3Ajupytercad%2FJupyterCAD-SALOME+involves%3AmartinRenou+updated%3A2024-04-22..2024-07-02&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Ajupytercad%2FJupyterCAD-SALOME+involves%3Apre-commit-ci+updated%3A2024-04-22..2024-07-02&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
 ## 2.0.0a0
 
 ([Full Changelog](https://github.com/jupytercad/jupytercad-salome/compare/v1.0.0...6b399abfd25689ab2fc3899f1dc0b98d529bb15e))
@@ -19,8 +37,6 @@
 ([GitHub contributors page for this release](https://github.com/jupytercad/jupytercad-salome/graphs/contributors?from=2024-01-12&to=2024-04-22&type=c))
 
 [@trungleduc](https://github.com/search?q=repo%3Ajupytercad%2Fjupytercad-salome+involves%3Atrungleduc+updated%3A2024-01-12..2024-04-22&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 1.0.1
 
