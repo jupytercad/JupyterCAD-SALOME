@@ -47,7 +47,7 @@ jobs:
           pip uninstall -y "jupytercad_salome" jupyterlab
 
       - name: Upload extension packages
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: extension-artifacts
           path: dist/jupytercad_salome*
@@ -166,7 +166,7 @@ jobs:
 
       - name: Upload Playwright Test report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: jupytercad-playwright-tests
           path: |
