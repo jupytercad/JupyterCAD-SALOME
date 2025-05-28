@@ -63,7 +63,7 @@ jobs:
         with:
           python-version: '3.9'
           architecture: 'x64'
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: extension-artifacts
       - name: Install and Test
@@ -109,7 +109,7 @@ jobs:
             jupyterlab=4
 
       - name: Download extension package
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: extension-artifacts
           path: ./ui-tests
