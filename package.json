@@ -52,8 +52,9 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupytercad/base": "^2.0.0",
-        "@jupytercad/schema": "^2.0.0",
+        "@jupyter/collaborative-drive": "^3.1.0",
+        "@jupytercad/base": "^3.1.3",
+        "@jupytercad/schema": "^3.1.3",
         "@jupyterlab/application": "^4.0.0",
         "@jupyterlab/coreutils": "^6.0.0",
         "@jupyterlab/services": "^7.0.0",
@@ -114,6 +115,10 @@
                 "bundled": false
             },
             "@jupytercad/schema": {
+                "singleton": true,
+                "bundled": false
+            },
+            "@jupyter/collaborative-drive": {
                 "singleton": true,
                 "bundled": false
             }

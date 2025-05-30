@@ -62,7 +62,7 @@ export class SalomeWorker implements IJCadWorker {
       const numberOfSegments = jcObject?.parameters?.NumberOfSegments ?? 15;
       const p = this._appClient.execute.generateMesh({
         requestBody: {
-          sourcePath: this._tracker.currentWidget?.context.path,
+          sourcePath: this._tracker.currentWidget?.model.filePath,
           geometry: postShape as string,
           format: ExecutionRequest.format.BREP,
           numberOfSegments
