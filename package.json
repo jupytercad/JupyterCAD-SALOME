@@ -116,6 +116,10 @@
             "@jupytercad/schema": {
                 "singleton": true,
                 "bundled": false
+            },
+            "@jupyter/collaborative-drive": {
+                "singleton": true,
+                "bundled": false
             }
         }
     },
