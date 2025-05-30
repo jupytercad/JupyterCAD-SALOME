@@ -715,6 +715,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jupytercad/jupytercad-salome@workspace:."
   dependencies:
+    "@jupyter/collaborative-drive": ^3.1.0
     "@jupytercad/base": ^3.0.0
     "@jupytercad/schema": ^3.0.0
     "@jupyterlab/application": ^4.0.0
