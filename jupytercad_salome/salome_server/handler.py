@@ -1,6 +1,7 @@
 import json
-from jupyter_server.base.handlers import APIHandler
+
 import tornado
+from jupyter_server.base.handlers import APIHandler
 
 try:
     from .mesh_builder import build_mesh
