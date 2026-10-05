@@ -1,8 +1,9 @@
-from pathlib import Path
-import salome
-import os
 import base64
+import os
+from pathlib import Path
 from tempfile import NamedTemporaryFile
+
+import salome
 from salome.geom import geomBuilder
 from salome.smesh import smeshBuilder
 
